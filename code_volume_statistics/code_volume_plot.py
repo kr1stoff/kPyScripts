@@ -1,8 +1,12 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+from pathlib import Path
 
-df = pd.read_excel('代码量统计.xlsx')
+
+workdir = Path(__file__).resolve().parent
+
+df = pd.read_excel( workdir / '代码量统计.xlsx')
 df.columns = ['week', 'add', 'delete', 'total']
 dfmelt = df.melt(id_vars='week')
 
@@ -22,4 +26,4 @@ sns.lineplot(data=dfmelt, x="week", y="value", hue="variable", ax=ax, markers=Tr
 ax.legend_.remove()
 ax.set_ylabel('')
 
-plt.savefig('code_volume.png')
+plt.savefig(workdir / 'code_volume.png')

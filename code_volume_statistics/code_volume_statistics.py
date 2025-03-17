@@ -24,7 +24,7 @@ headers = {
 # repos = repos_response.json()
 
 # todo 一些备选仓库
-# KML-RNASEQ,KML-LVISA,KML-TCR2,
+# KML-RNASEQ,KML-LVISA,KML-TCR2,mysite
 repo_input = input("请输入仓库名称，多个仓库以逗号(',')分隔：")
 repos = [repo.strip() for repo in repo_input.strip(',').split(",")]
 
